@@ -13,7 +13,7 @@
 
 
 date_default_timezone_set('America/New_York');
-#$AddressInfo  = $_REQUEST['Address'];
+$AddressInfo  = $_REQUEST['Address'];
 $responseFormat = "json";
 $baseURL = "http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2?";
 $date = new DateTime();
@@ -54,8 +54,8 @@ class JsonHandler {
  
 }
 
-# $AddressInfo=str_replace(' ','+',$AddressInfo);
-$AddressInfo= '+720+17+Street';
+$AddressInfo=str_replace(' ','+',$AddressInfo);
+#$AddressInfo= '+720+17+Street';
 	
 $requestURL =$baseURL . "f=" . $responseFormat . "&" . "str=" . $AddressInfo;
 
