@@ -57,10 +57,12 @@ class JsonHandler {
  
 }
 
-$AddressInfo=str_replace(' ','+',$AddressInfo);
+
 
 	
 $requestURL =$baseURL . "f=" . $responseFormat . "&" . "str=" . $AddressInfo;
+
+$requestURL=str_replace(' ','+',$requestURL);
 
 file_put_contents("php://stdout", "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
