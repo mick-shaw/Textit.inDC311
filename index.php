@@ -57,8 +57,8 @@ class JsonHandler {
  
 }
 
-$AddressInfo=str_replace(' ','+',$AddressInfo);
-#$AddressInfo= '+720+17+Street';
+$AddressInfo=str_replace('%20','+',$AddressInfo);
+
 	
 $requestURL =$baseURL . "f=" . $responseFormat . "&" . "str=" . $AddressInfo;
 
