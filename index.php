@@ -17,9 +17,12 @@ $AddressInfo  = $_REQUEST['Address'];
 $responseFormat = "json";
 $baseURL = "http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2?";
 $date = new DateTime();
-#$catchfile = '/var/log/LocationFinder.log';
+# Log file not needed
+#$logfile = '/var/log/LocationFinder.log';
 $Location_Arr = array();
 $LocationURL_Arr = array();
+
+
 
 class JsonHandler {
  
