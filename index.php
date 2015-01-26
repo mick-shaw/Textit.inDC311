@@ -13,7 +13,7 @@
 
 
 date_default_timezone_set('America/New_York');
-$AddressInfo  = $_REQUEST[''];
+$AddressInfo  = $_REQUEST['str'];
 $responseFormat = "json";
 $baseURL = "http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2?";
 $date = new DateTime();
