@@ -13,11 +13,11 @@
 
 
 date_default_timezone_set('America/New_York');
-$AddressInfo  = $_REQUEST['Address'];
+$AddressInfo  = $_REQUEST['values'];
 $responseFormat = "json";
 $baseURL = "http://citizenatlas.dc.gov/newwebservices/locationverifier.asmx/findLocation2?";
 $date = new DateTime();
-$catchfile = '/var/log/LocationFinder.log';
+#$catchfile = '/var/log/LocationFinder.log';
 $Location_Arr = array();
 $LocationURL_Arr = array();
 
@@ -59,7 +59,7 @@ $AddressInfo=str_replace(' ','+',$AddressInfo);
 	
 $requestURL =$baseURL . "f=" . $responseFormat . "&" . "str=" . $AddressInfo;
 
-file_put_contents($catchfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
+file_put_contents("php://stdout", "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
   $ch = curl_init($requestURL);
   $timeout = 15;
@@ -70,7 +70,7 @@ file_put_contents($catchfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $reque
   curl_close($ch);
   $date = new DateTime();
  
- file_put_contents($catchfile, $date->format('Y-m-d H:i:s') . " " . $AddressInfo . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+ file_put_contents("php://stderr", $date->format('Y-m-d H:i:s') . " " . $AddressInfo . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
 	
    if($responseCode == '200' ) {
    	$jsonData = JsonHandler::decode($returned_content); 
