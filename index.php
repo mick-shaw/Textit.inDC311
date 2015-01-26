@@ -100,7 +100,7 @@ file_put_contents("php://stdout", "\n" . $date->format('Y-m-d H:i:s') . " " . $r
    
 
 
-if (empty($Location_Arr[0])) {
+if (empty($ArrayIndex[0])) {
   echo "\n" . json_encode($InvalidLocation). "\n";;
 }else{
   echo  "\n" . json_encode($Location_Arr). "\n";  
