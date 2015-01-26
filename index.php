@@ -21,7 +21,7 @@ $date = new DateTime();
 #$logfile = '/var/log/LocationFinder.log';
 $Location_Arr = array();
 $LocationURL_Arr = array();
-
+$InvalidLocation = array('Address_0'=>'invalid');
 
 
 class JsonHandler {
@@ -92,11 +92,18 @@ file_put_contents("php://stdout", "\n" . $date->format('Y-m-d H:i:s') . " " . $r
                 $Location_Arr[$ArrayIndex] = $FullAdress;
                 $Location_Arr[$ArrayURLIndex] = $StreetURL;
                 $x=$x+1;
-  	 		      }
+  	 		      } 
   	 		
   	 	     }
     	   }
    	}
    
-echo  "\n" . json_encode($Location_Arr). "\n";	
+
+
+if (empty($Location_Arr[0])) {
+  echo "\n" . json_encode($InvalidLocation). "\n";;
+}else{
+  echo  "\n" . json_encode($Location_Arr). "\n";  
+}
+
 ?>
