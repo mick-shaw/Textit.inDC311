@@ -85,7 +85,7 @@ function TrashAddress ($AddressInput, $latlon){
 
     $GISrequestURL=str_replace(' ','+',$GISrequestURL);
 
-    #file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
+    file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $GISrequestURL . "\n", FILE_APPEND | LOCK_EX);
 
       $ch = curl_init($GISrequestURL);
       $timeout = 15;
@@ -96,7 +96,7 @@ function TrashAddress ($AddressInput, $latlon){
       curl_close($ch);
       $date = new DateTime();
      
-     file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $AddressInfo . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+     file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $AddressInput . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
       
        if($responseCode == '200' ) {
         $jsonData = json_decode($returned_content); 
