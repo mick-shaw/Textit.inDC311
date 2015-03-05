@@ -1,20 +1,23 @@
 <?php
 
 
-# DC311 Open311 Service Request Status Trash Collection Tickets
-# and returns a flat dictionary JSON response.
+# Superdupper Trash Collection Service Request Status API
+# Provides All Service Request with Service Code S0441.
+# Requires start_date and end_date Parameters
+# Uses the address to query the citizen address for lat/long
+# and adds the lat/long fields in the JSON Response
 # Version 1.0
 # Maintainer: Mick Shaw (mshaw@potomacintegration.com)
-# Date: 01/27/2015
+# Date: 03/05/2015
 #
-# TODO
+# TODO: Clean it up
+# This was down and dirty (Frankenstein script)
 #
 
 date_default_timezone_set('America/New_York');
 $start_date  = $_REQUEST['start_date'];
 $end_date = $_REQUEST['end_date'];
 
-$AddressInfo  = "3239 CHESTNUT STREET NW, WASHINGTON, DC 20015";
 $Location_Arr = array();
 $LocationURL_Arr = array();
 #$start_date  = "2015-03-01T00%3A00%3A00.300Z";
@@ -82,7 +85,7 @@ function TrashAddress ($AddressInput, $latlon){
 
     $GISrequestURL=str_replace(' ','+',$GISrequestURL);
 
-    #file_put_contents("php://stdout", "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
+    file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
       $ch = curl_init($GISrequestURL);
       $timeout = 15;
@@ -93,7 +96,7 @@ function TrashAddress ($AddressInput, $latlon){
       curl_close($ch);
       $date = new DateTime();
      
-     #file_put_contents("php://stderr", $date->format('Y-m-d H:i:s') . " " . $AddressInfo . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+     file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $AddressInfo . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
       
        if($responseCode == '200' ) {
         $jsonData = json_decode($returned_content); 
@@ -129,7 +132,7 @@ $requestURL =$baseURL . "&start_date=" . $start_date . "&end_date=" . $end_date;
 
 
 
-#file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
+file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
   $ch = curl_init($requestURL);
   $timeout = 15;
@@ -140,7 +143,7 @@ $requestURL =$baseURL . "&start_date=" . $start_date . "&end_date=" . $end_date;
   curl_close($ch);
   $date = new DateTime();
  
- #file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
   
 if($responseCode == '200' ) {
 
