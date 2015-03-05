@@ -11,8 +11,8 @@
 #
 
 date_default_timezone_set('America/New_York');
-$start_date  = $_REQUEST['start_date'];
-$end_date = $_REQUEST['end_date'];
+#$start_date  = $_REQUEST['start_date'];
+#$end_date = $_REQUEST['end_date'];
 
 $AddressInfo  = "3239 CHESTNUT STREET NW, WASHINGTON, DC 20015";
 $Location_Arr = array();
@@ -103,8 +103,8 @@ function TrashAddress ($AddressInput, $latlon){
                    {
                     $ArrayIndex = "Latitude";
                     $ArrayURLIndex = "Longitude";
-                    $Latitude = $AddressTable->LATITUDE;
-                    $Longitude = $AddressTable->LONGITUDE;
+                    $Latitude = "$AddressTable->LATITUDE";
+                    $Longitude = "$AddressTable->LONGITUDE";
                     $Location_Arr[$ArrayIndex] = "$Latitude";
                     $Location_Arr[$ArrayURLIndex] = "$Longitude";
                    
@@ -129,7 +129,7 @@ $requestURL =$baseURL . "&start_date=" . $start_date . "&end_date=" . $end_date;
 
 
 
-file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
+#file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
   $ch = curl_init($requestURL);
   $timeout = 15;
@@ -140,7 +140,7 @@ file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $request
   curl_close($ch);
   $date = new DateTime();
  
- file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+ #file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
   
 if($responseCode == '200' ) {
 
