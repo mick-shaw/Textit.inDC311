@@ -85,8 +85,6 @@ function TrashAddress ($AddressInput, $latlon){
 
     $GISrequestURL=str_replace(' ','+',$GISrequestURL);
 
-    file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $GISrequestURL . "\n", FILE_APPEND | LOCK_EX);
-
       $ch = curl_init($GISrequestURL);
       $timeout = 15;
       curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
