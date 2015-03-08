@@ -87,7 +87,11 @@ file_put_contents("php://stdout", "\n" . $date->format('Y-m-d H:i:s') . " " . $r
                 $ArrayURLIndex = "AddressURL_" . (string)$x;
               if (($AddressTable->STATUS == "ACTIVE")&& ($x <5)){
   	 		
-                $FullAdress = $AddressTable->FULLADDRESS;
+                $Adress = $AddressTable->FULLADDRESS;
+                $City = $AddressTable->CITY;
+                $State = $AddressTable->STATE;
+                $ZipCode = $AddressTable->ZIPCODE;
+                $FullAdress = $Address . ", " . $City . ", " . $State . " " . $ZipCode; 
                 $StreetURL = $AddressTable->STREETVIEWURL;
                 $Location_Arr[$ArrayIndex] = $FullAdress;
                 $Location_Arr[$ArrayURLIndex] = $StreetURL;
