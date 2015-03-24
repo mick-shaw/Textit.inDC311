@@ -15,20 +15,18 @@
 #
 
 date_default_timezone_set('America/New_York');
-$start_date  = $_REQUEST['start_date'];
-$end_date = $_REQUEST['end_date'];
+#$start_date  = $_REQUEST['start_date'];
+#$end_date = $_REQUEST['end_date'];
 
 $Location_Arr = array();
 $LocationURL_Arr = array();
-#$start_date  = "2015-03-01T00%3A00%3A00.300Z";
-#$end_date = "2015-03-04T00%3A00%3A00.300Z";
+$start_date  = "2015-03-01T00%3A00%3A00.300Z";
+$end_date = "2015-03-04T00%3A00%3A00.300Z";
 $baseURL = "http://app.311.dc.gov/cwi/Open311/v2/requests.xml?jurisdiction_id=dc.gov&service_code=S0441";
 $date = new DateTime();
 $logfile = 'php://stdout';
-$ServiceRequestIDArray = array();
-$RetunedDataset = array();
-$service_requests = array();
-$InvalidServiceID = array('service_request_id'=>'invalid');
+#$ServiceRequestIDArray = array();
+#$RetunedDataset = array();
 require_once 'xml2json.php';
 
 
@@ -94,7 +92,7 @@ function TrashAddress ($AddressInput, $latlon){
       curl_close($ch);
       $date = new DateTime();
      
-     file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $AddressInput . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+     #file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $AddressInput . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
       
        if($responseCode == '200' ) {
         $jsonData = json_decode($returned_content); 
@@ -130,7 +128,7 @@ $requestURL =$baseURL . "&start_date=" . $start_date . "&end_date=" . $end_date;
 
 
 
-file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
+#file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
   $ch = curl_init($requestURL);
   $timeout = 15;
@@ -141,7 +139,7 @@ file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $request
   curl_close($ch);
   $date = new DateTime();
  
-file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
+#file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_content . "\n", FILE_APPEND | LOCK_EX);
   
 if($responseCode == '200' ) {
 
