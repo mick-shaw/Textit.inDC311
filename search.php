@@ -61,7 +61,7 @@ class JsonHandler {
 
 $requestURL =$baseURL . $searchvalue;
 
-
+$requestURL=str_replace(' ','+',$requestURL);
 
 file_put_contents($logfile, "\n" . $date->format('Y-m-d H:i:s') . " " . $requestURL . "\n", FILE_APPEND | LOCK_EX);
 
