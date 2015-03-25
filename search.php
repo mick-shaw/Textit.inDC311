@@ -8,7 +8,6 @@
 
 date_default_timezone_set('America/New_York');
 $searchvalue  = $_REQUEST['q'];
-$searchvalue = "Liquor";
 $baseURL = "https://qjrzeixfhk:efolbnqz45@agencylookup-199053081.us-east-1.bonsai.io/_search?q=";
 $date = new DateTime();
 $logfile = '/var/log/searchvalue.log';
