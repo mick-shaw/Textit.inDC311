@@ -2,8 +2,9 @@
 
 
 # Superdupper Contact Search
-# Intake a value and use it to search 
-# Bonsai JSON pages for a match
+# Onereach does not seem to handle embedded username/passwords in the URL
+# Therefore this wrapper simply proxies requests to the ES hosted on bonsai.io
+# Intake a value q and uses it to search ~78 ES Indexes 
 #
 
 date_default_timezone_set('America/New_York');
