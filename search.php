@@ -9,10 +9,12 @@
 
 date_default_timezone_set('America/New_York');
 $searchvalue  = $_REQUEST['q'];
+#$searchvalue = "Child";
 $baseURL = "https://qjrzeixfhk:efolbnqz45@agencylookup-199053081.us-east-1.bonsai.io/_search?q=";
 $date = new DateTime();
 $logfile = '/var/log/searchvalue.log';
-
+$AddressArr = array();
+$AddressArrHits = array();
 class JsonHandler {
  
     protected static $_messages = array(
@@ -79,8 +81,20 @@ file_put_contents($logfile, $date->format('Y-m-d H:i:s') . " " . $returned_conte
   
 if($responseCode == '200' ) {
 
-$jsondecoded = JsonHandler::decode_true($returned_content);
+$jsonData = JsonHandler::decode_false($returned_content); 
+          
+          foreach ($jsonData->hits->hits as $AddressTable) {
+          
+           $AddressArr["index"] = $AddressTable->_index;
+           $AddressArr["AgencyCode"] = $AddressTable->_id;
+           $AddressArr["match_score"] = "$AddressTable->_score";
+           array_push($AddressArrHits, $AddressArr);
+           
 
-echo  "\n" . json_encode($jsondecoded) . "\n"; 
+               }
+          
+echo  "\n" . json_encode($AddressArrHits) . "\n"; 
 }
+
+
 ?>
