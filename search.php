@@ -8,13 +8,14 @@
 #
 
 date_default_timezone_set('America/New_York');
-$searchvalue  = $_REQUEST['q'];
-#$searchvalue = "Child";
+#$searchvalue  = $_REQUEST['q'];
+$searchvalue = "Fish";
 $baseURL = "https://qjrzeixfhk:efolbnqz45@agencylookup-199053081.us-east-1.bonsai.io/_search?q=";
 $date = new DateTime();
 $logfile = '/var/log/searchvalue.log';
 $AddressArr = array();
 $AddressArrHits = array();
+$InvalidResponse = array('AgencyCode'=>'invalid');
 class JsonHandler {
  
     protected static $_messages = array(
@@ -92,9 +93,16 @@ $jsonData = JsonHandler::decode_false($returned_content);
            
 
                }
-          
-echo  "\n" . json_encode($AddressArrHits) . "\n"; 
-}
+     
+ }         
+if (empty($AddressArrHits)) {
+  
+  echo "\n" . json_encode($InvalidResponse). "\n";
 
+}else{
+
+echo  "\n" . json_encode($AddressArrHits) . "\n"; 
+
+}
 
 ?>
