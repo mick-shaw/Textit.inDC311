@@ -8,8 +8,8 @@
 #
 
 date_default_timezone_set('America/New_York');
-#$searchvalue  = $_REQUEST['q'];
-$searchvalue = "Fish";
+$searchvalue  = $_REQUEST['q'];
+#$searchvalue = "Fish";
 $baseURL = "https://qjrzeixfhk:efolbnqz45@agencylookup-199053081.us-east-1.bonsai.io/_search?q=";
 $date = new DateTime();
 $logfile = '/var/log/searchvalue.log';
@@ -96,7 +96,7 @@ $jsonData = JsonHandler::decode_false($returned_content);
      
  }         
 if (empty($AddressArrHits)) {
-  array_push($AddressArrHits, $InvalidResponse)  
+  array_push($AddressArrHits, $InvalidResponse);  
   echo "\n" . json_encode($AddressArrHits). "\n";
 
 }else{
