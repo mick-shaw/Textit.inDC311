@@ -96,10 +96,11 @@ $jsonData = JsonHandler::decode_false($returned_content);
      
  }         
 if (empty($AddressArrHits)) {
-  
-  echo "\n" . json_encode($InvalidResponse). "\n";
+  array_push($AddressArrHits, $InvalidResponse)  
+  echo "\n" . json_encode($AddressArrHits). "\n";
 
 }else{
+
 
 echo  "\n" . json_encode($AddressArrHits) . "\n"; 
 
