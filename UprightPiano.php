@@ -77,7 +77,7 @@ if ($resp->ack == "Success") {
     array_push($medianarray, $currentPrice);
 
     // Build the desired HTML code for each searchResult.item node and append it to $results
-    $results .= "<tr><td><?php echo $query; ?>$<?php echo money_format('%.2n', $currentPrice); ?>$currentPrice</td><td><a href=\"$link\">$title</a></td></tr>";
+    $results .= "<tr><td>$<?php echo money_format('%.2n', $currentPrice); ?>$currentPrice</td><td><img src=\"$pic\"width=50 height=50><?php echo $query; ?></td><td><a href=\"$link\">$title</a></td></tr>";
   	$totals = $currentPrice + $totals;
   	$count++;
   	$AveragePrince = $totals/$count;
@@ -117,7 +117,7 @@ function array_median($array) {
 <h3>Current average price for an upright piano on ebay is $<?php echo money_format('%.2n', $AveragePrince); ?></h3>
 
 
-<table>
+<table align="left">
 <tr>
   <td>
     <?php echo $results;?>
