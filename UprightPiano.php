@@ -20,11 +20,6 @@ $filterarray =
     'paramName' => 'Currency',
     'paramValue'  => 'USD'),
     array(
-    'name' => 'FreeShippingOnly',
-    'value' => 'true',
-    'paramName' => '',
-    'paramValue'  => ''),
-    array(
     'name' => 'ListingType',
     'value' => array('AuctionWithBIN','FixedPrice','StoreInventory'),
     'paramName' => '',
