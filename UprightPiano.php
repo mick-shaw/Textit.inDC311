@@ -3,7 +3,7 @@ error_reporting(E_ALL);  // Turn on all errors, warnings, and notices for easier
 
 // API request variables
 $endpoint = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to call
-$query = 'Kimball piano';                  // Supply your own query keywords as needed
+$query = 'kimball upright piano';                  // Supply your own query keywords as needed
 
 // Create a PHP array of the item filters you want to use in your request
 $medianarray = array();
