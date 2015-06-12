@@ -10,7 +10,7 @@ $cn  = $_REQUEST['cn'];
 $qstn = $_REQUEST['qstn'];
 $sat = $_REQUEST['sat'];
 $wait = $_REQUEST['wait'];
-$prof = = $_REQUEST['prof']; 
+$prof = $_REQUEST['prof']; 
 
 $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sck3t55ue user=yysuxoqqtdzohb password=D27ay0-A7oQKsvsGmAfrCBnmT9")
          or die('Could not connect: ' . pg_last_error());
