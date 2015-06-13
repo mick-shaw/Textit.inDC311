@@ -36,36 +36,36 @@ if ($sat == '1'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_yes) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
-                           VALUES('OverallSatisfaction','1');");
+                           VALUES('Overall Satisfaction','1');");
 }elseif ($sat == '2'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_no) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
-                           VALUES('OverallSatisfaction','1');");
+                           VALUES('Overall Satisfaction','1');");
 }
 
 if ($wait == '1'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_yes) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
-                           VALUES('waittime','1');");
+                           VALUES('Wait Time','1');");
 
 }elseif ($wait == '2'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_no) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
-                           VALUES('waittime','1');");
+                           VALUES('Wait Time','1');");
 }					
 if ($prof == '1'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_yes) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
-                           VALUES('professionalism','1');");
+                           VALUES('Professionalism','1');");
 }elseif ($prof == '2'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_no) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
-                           VALUES('professionalism','1');");
+                           VALUES('Professionalism','1');");
 }
 
 
