@@ -22,32 +22,50 @@ $result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, o
 if ($qstn == '1'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_yes) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
+                           VALUES('questionsanswered','1');");
 }elseif ($qstn == '2'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
                            VALUES('1');");
+
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
+                           VALUES('questionsanswered','1');");
 }
 
 if ($sat == '1'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_yes) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
+                           VALUES('OverallSatisfaction','1');");
 }elseif ($sat == '2'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_no) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
+                           VALUES('OverallSatisfaction','1');");
 }
 
 if ($wait == '1'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_yes) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
+                           VALUES('waittime','1');");
+
 }elseif ($wait == '2'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_no) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
+                           VALUES('waittime','1');");
 }					
 if ($prof == '1'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_yes) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
+                           VALUES('professionalism','1');");
 }elseif ($prof == '2'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_no) 
                            VALUES('1');");
+	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
+                           VALUES('professionalism','1');");
 }
 
 
