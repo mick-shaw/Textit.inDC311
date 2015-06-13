@@ -22,8 +22,7 @@ $result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, o
 if ($qstn == '1'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_yes) 
                            VALUES('1');");
-}
-if ($qstn == '2'){
+}elseif ($qstn == '2'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
                            VALUES('1');");
 }
