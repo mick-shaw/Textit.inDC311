@@ -23,13 +23,13 @@ if ($qstn == '1'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_yes) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _yes) 
-                           VALUES('questionsanswered','1');");
+                           VALUES('Questions Answered','1');");
 }elseif ($qstn == '2'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
                            VALUES('1');");
 
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, _no) 
-                           VALUES('questionsanswered','1');");
+                           VALUES('Questions Answered','1');");
 }
 
 if ($sat == '1'){
