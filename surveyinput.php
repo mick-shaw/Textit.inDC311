@@ -45,7 +45,7 @@ if ($wait = '1'){
 if ($prof = '1'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_yes) 
                            VALUES('1');");
-}elseif ($prof = '2'{
+}elseif ($prof = '2')
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_no) 
                            VALUES('1');");
 }
