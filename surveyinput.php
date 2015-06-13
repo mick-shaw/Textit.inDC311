@@ -19,7 +19,14 @@ $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sc
          //perform the insert using pg_query
 $result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, overallsatisfaction, waittime, professionalism) 
                            VALUES('$cn', '$qstn', '$sat','$wait','$prof');");
-
+if ($qstn = '1'){
+	$result = pg_query($dbconn, "INSERT INTO CustomerSat(Yes) 
+                           VALUES('$qstn');");
+}else{
+	$result = pg_query($dbconn, "INSERT INTO CustomerSat(No) 
+                           VALUES('$qstn');");
+}
+					
 //                          //dump the result object
                            var_dump($result);
 
