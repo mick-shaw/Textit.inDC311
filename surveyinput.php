@@ -22,7 +22,7 @@ $result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, o
 if ($qstn = '1'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_yes) 
                            VALUES('1');");
-}else{
+}elseif ($qstn = '2'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
                            VALUES('1');");
 }
@@ -30,7 +30,7 @@ if ($qstn = '1'){
 if ($sat = '1'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_yes) 
                            VALUES('1');");
-}else{
+}elseif ($sat = '2'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_no) 
                            VALUES('1');");
 }
@@ -38,14 +38,14 @@ if ($sat = '1'){
 if ($wait = '1'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_yes) 
                            VALUES('1');");
-}else{
+}elseif ($wait = '2'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_no) 
                            VALUES('1');");
 }					
 if ($prof = '1'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_yes) 
                            VALUES('1');");
-}else{
+}elseif ($prof = '2'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_no) 
                            VALUES('1');");
 }
