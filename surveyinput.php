@@ -20,10 +20,10 @@ $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sc
 $result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, overallsatisfaction, waittime, professionalism) 
                            VALUES('$cn', '$qstn', '$sat','$wait','$prof');");
 if ($qstn = '1'){
-	$result = pg_query($dbconn, "INSERT INTO CustomerSat(Yes) 
+	$result = pg_query($dbconn, "INSERT INTO CustomerSat(_yes) 
                            VALUES('$qstn');");
 }else{
-	$result = pg_query($dbconn, "INSERT INTO CustomerSat(No) 
+	$result = pg_query($dbconn, "INSERT INTO CustomerSat(_no) 
                            VALUES('$qstn');");
 }
 					
