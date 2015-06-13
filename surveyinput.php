@@ -20,7 +20,7 @@ $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sc
 $result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, overallsatisfaction, waittime, professionalism) 
                            VALUES('$cn', '$qstn', '$sat','$wait','$prof');");
 if ($qstn = '1'){
-	$result = pg_query($dbconn, "INSERT INTO questions(_yes) 
+	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
                            VALUES('1');");
 }elseif ($qstn = '2'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
@@ -45,7 +45,7 @@ if ($wait = '1'){
 if ($prof = '1'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_yes) 
                            VALUES('1');");
-}elseif ($prof = '2'){
+}elseif ($prof = '2'{
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_no) 
                            VALUES('1');");
 }
