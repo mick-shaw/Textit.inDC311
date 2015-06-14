@@ -1,8 +1,9 @@
 <?php
 
 /*
- *  * PHP PGSQL - How to insert rows into PostgreSQL table
- *	* Sample HBX Demo
+ *  * Sample HBX Web-service to gather real-time results from
+ *  * from OneReach Post-call survey
+ *	* Potomac Integration and Consulting: Mick Shaw
  *   */
  
 // Connecting, selecting database
