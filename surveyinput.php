@@ -19,7 +19,7 @@ $qstn = $_REQUEST['qstn'];
 $sat = $_REQUEST['sat'];
 $wait = $_REQUEST['wait'];
 $prof = $_REQUEST['prof']; 
-$refer = $_REQUEST['refer']
+$refer = $_REQUEST['refer'];
 
 // Connect to my awesome Sample PostGres Database
 
