@@ -12,8 +12,8 @@
 // qstn  = Questions Answered Answer 
 // sat   = Overall Satisfaction Answer
 // wait  = Wait Time Answer
-// prof  = Professionalism Answer
-// refer = Referral Answer
+// prof  = Professionalism Answers
+// refer = Referral Answers
 
 $cn  = $_REQUEST['cn'];
 $qstn = $_REQUEST['qstn'];
