@@ -47,7 +47,7 @@ switch ($qstn){
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Somewhat Disagree');");
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO questions2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO questions2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Strongly Disagree');");
@@ -66,7 +66,7 @@ switch ($qstn){
 
 switch ($sat){
    case 1:
-      $result = pg_query($dbconn, "INSERT INTO customerSat2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO customerSat2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Overall Satisfaction','Strongly Disagree');");
@@ -80,7 +80,7 @@ switch ($sat){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO customersat2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO customersat2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Overall Satisfaction','Strongly Disagree');");
@@ -117,7 +117,7 @@ switch ($wait){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO wait2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO wait2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Wait Time','Strongly Disagree');");
@@ -140,7 +140,7 @@ switch ($wait){
 
 switch ($prof){
    case 1:
-      $result = pg_query($dbconn, "INSERT INTO professionalism2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO professionalism2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Professionalism','Strongly Disagree');");
@@ -154,7 +154,7 @@ switch ($prof){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO professionalism2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO professionalism2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Professionalism','Strongly Disagree');");
@@ -177,7 +177,7 @@ switch ($prof){
 
 switch ($refer){
    case 1:
-      $result = pg_query($dbconn, "INSERT INTO referral2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO referral2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Referral','Strongly Disagree');");
@@ -191,7 +191,7 @@ switch ($refer){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO referral2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO referral2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Referral','Strongly Disagree');");
