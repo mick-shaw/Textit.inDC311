@@ -51,14 +51,14 @@ switch ($qstn){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO questions2(Strongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO questions2(Niether) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
-                           VALUES('Questions Answered','Strongly Disagree');");
+                           VALUES('Questions Answered','Niether');");
       break;
 
    case 4:
-      $result = pg_query($dbconn, "INSERT INTO questions2(Niether) 
+      $result = pg_query($dbconn, "INSERT INTO questions2(Somewhat_Agree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Somewhat Agree');");   
@@ -88,14 +88,14 @@ switch ($sat){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO customersat2(Strongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO customersat2(Niether) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
-                           VALUES('Overall Satisfaction','Strongly Disagree');");
+                           VALUES('Overall Satisfaction','Niether');");
       break;
 
    case 4:
-      $result = pg_query($dbconn, "INSERT INTO customersat2(Niether) 
+      $result = pg_query($dbconn, "INSERT INTO customersat2(Somewhat_Agree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Overall Satisfaction','Somewhat Agree');");   
@@ -125,14 +125,14 @@ switch ($wait){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO wait2(Strongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO wait2(Niether) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
-                           VALUES('Wait Time','Strongly Disagree');");
+                           VALUES('Wait Time','Niether');");
       break;
 
    case 4:
-      $result = pg_query($dbconn, "INSERT INTO wait2(Niether) 
+      $result = pg_query($dbconn, "INSERT INTO wait2(Somewhat_Agree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Wait Time','Somewhat Agree');");   
@@ -162,14 +162,14 @@ switch ($prof){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO professionalism2(Strongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO professionalism2(Niether) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
-                           VALUES('Professionalism','Strongly Disagree');");
+                           VALUES('Professionalism','Niether');");
       break;
 
    case 4:
-      $result = pg_query($dbconn, "INSERT INTO professionalism2(Niether) 
+      $result = pg_query($dbconn, "INSERT INTO professionalism2(Somewhat_Agree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Professionalism','Somewhat Agree');");   
@@ -199,14 +199,14 @@ switch ($refer){
       break;
 
    case 3:
-      $result = pg_query($dbconn, "INSERT INTO referral2(Strongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO referral2(Niether) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
-                           VALUES('Referral','Strongly Disagree');");
+                           VALUES('Referral','Niether');");
       break;
 
    case 4:
-      $result = pg_query($dbconn, "INSERT INTO referral2(Niether) 
+      $result = pg_query($dbconn, "INSERT INTO referral2(Somewhat_Agree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Referral','Somewhat Agree');");   
