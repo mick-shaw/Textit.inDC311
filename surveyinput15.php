@@ -3,23 +3,22 @@
 /*
  *  * Sample HBX Web-service to gather real-time results from
  *  * from OneReach Post-call survey
+ *  * Survey input for 1 thorugh 5.
  *	* Potomac Integration and Consulting: Mick Shaw
  *   */
  
 // Gather data elements from the OneReach webcall post-survey
-// cn    = Phone Nunmber
-// qstn  = Questions Answered Answer 
-// sat   = Overall Satisfaction Answer
-// wait  = Wait Time Answer
-// prof  = Professionalism Answer
-// refer = Referral Answer
+// cn   = Phone Nunmber
+// qstn = Questions Answered Answer 
+// sat  = Overall Satisfaction Answer
+// wait = Wait Time Answer
+// prof = Professionalism Answer
 
 $cn  = $_REQUEST['cn'];
 $qstn = $_REQUEST['qstn'];
 $sat = $_REQUEST['sat'];
 $wait = $_REQUEST['wait'];
 $prof = $_REQUEST['prof']; 
-$refer = $_REQUEST['refer']
 
 // Connect to my awesome Sample PostGres Database
 
@@ -29,8 +28,8 @@ $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sc
 
 // Insert the Survey Answers into the awesome database
 
-$result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, overallsatisfaction, waittime, professionalism, referral) 
-                           VALUES('$cn', '$qstn', '$sat','$wait','$prof','$refer');");
+$result = pg_query($dbconn, "INSERT INTO HBX(callingnumber, questionsanswered, overallsatisfaction, waittime, professionalism, referal) 
+                           VALUES('$cn', '$qstn', '$sat','$wait','$prof','referal');");
 if ($qstn == '1'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_yes) 
                            VALUES('1');");
@@ -79,17 +78,7 @@ if ($prof == '1'){
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
                            VALUES('Professionalism','N');");
 }
-if ($refer == '1'){
-   $result = pg_query($dbconn, "INSERT INTO referral(_yes) 
-                           VALUES('1');");
-   $result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
-                           VALUES('Referral','Y');");
-}elseif ($prof == '2'){
-   $result = pg_query($dbconn, "INSERT INTO referral(_no) 
-                           VALUES('1');");
-   $result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
-                           VALUES('Referral','N');");
-}
+
 
 //                          //dump the result object
                            var_dump($result);
