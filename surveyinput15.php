@@ -37,7 +37,7 @@ $result = pg_query($dbconn, "INSERT INTO HBX2(callingnumber, questionsanswered, 
 
 switch ($qstn){
    case 1:
-      $result = pg_query($dbconn, "INSERT INTO questions2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO questions2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Strongly Disagree');");
@@ -103,7 +103,7 @@ switch ($sat){
 
 switch ($wait){
    case 1:
-      $result = pg_query($dbconn, "INSERT INTO wait2(Stongly_Disagree) 
+      $result = pg_query($dbconn, "INSERT INTO wait2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Wait Time','Strongly Disagree');");
