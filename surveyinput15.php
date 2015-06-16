@@ -41,26 +41,34 @@ switch ($qstn){
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Strongly Disagree');");
+      break;
+
    case 2:
       $result = pg_query($dbconn, "INSERT INTO questions2(Somewhat_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Somewhat Disagree');");
+      break;
+
    case 3:
       $result = pg_query($dbconn, "INSERT INTO questions2(Strongly_Disagree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Strongly Disagree');");
+      break;
+
    case 4:
       $result = pg_query($dbconn, "INSERT INTO questions2(Niether) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Somewhat Agree');");   
+      break;
    case 5:
       $result = pg_query($dbconn, "INSERT INTO questions2(Strongly_Agree) 
                            VALUES('1');");
       $result = pg_query($dbconn, "INSERT INTO COMPOSITE2(SurveyItem, Result) 
                            VALUES('Questions Answered','Strongly Agree');");
+      break;
 
 }
 
