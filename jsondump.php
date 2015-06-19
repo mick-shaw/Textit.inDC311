@@ -28,7 +28,7 @@ $result = pg_query($dbconn, "SELECT * FROM HBX2");
 print json_encode(array_values(pg_fetch_all($result)));
 
               //dump the result object
-                           var_dump($result);
+                           //var_dump($result);
 
                            //Closing connection
                           pg_close($dbconn);
