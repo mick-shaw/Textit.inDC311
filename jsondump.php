@@ -19,7 +19,7 @@ $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sc
 // Select Survey Answers from my awesome database
 
 if ($survey == 'yes_no'){ 
-   switch ($query)
+   switch ($query){
       case "all":
       $result = pg_query($dbconn, "SELECT * FROM HBX");
       print json_encode(array_values(pg_fetch_all($result)));
@@ -34,11 +34,13 @@ if ($survey == 'yes_no'){
       $result = pg_query($dbconn, "SELECT COUNT(*) FROM HBX WHERE my_date = now()::DATE");
       print json_encode(array_values(pg_fetch_all($result)));
       break;
-   } 
+   }
+}    
    
    
    
 if ($survey == 'rank'){ 
+   switch ($query){
    case "all":
       $result = pg_query($dbconn, "SELECT * FROM HBX2");
       print json_encode(array_values(pg_fetch_all($result)));
@@ -55,8 +57,7 @@ if ($survey == 'rank'){
       break; 
    
    }
-
-
+}
               //dump the result object
                            //var_dump($result);
 
