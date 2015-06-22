@@ -37,7 +37,7 @@ if ($survey == 'yes_no'){
 
       case "todayreferral":
       $result = pg_query($dbconn, "SELECT result 
-         AS 'WaitTime_Results', COUNT(result) AS 'Totals' 
+         AS WaitTime_Results, COUNT(result) AS Totals 
          FROM composite WHERE surveyitem = 'Referral' 
          AND my_date=now()::Date GROUP BY WaitTime_Results");
       
@@ -69,7 +69,7 @@ if ($survey == 'rank'){
    }
 }
               //dump the result object
-                           var_dump($result);
+                           //var_dump($result);
 
                            //Closing connection
                           pg_close($dbconn);
