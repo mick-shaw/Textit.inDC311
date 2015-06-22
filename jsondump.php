@@ -24,7 +24,7 @@ $dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sc
 
 // Insert the Survey Answers into the awesome database
 
-$result = pg_query($dbconn, "SELECT * FROM HBX2");
+$result = pg_query($dbconn, "SELECT * FROM HBX");
 print json_encode(array_values(pg_fetch_all($result)));
 
               //dump the result object
