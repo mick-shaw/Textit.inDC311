@@ -40,10 +40,40 @@ if ($survey == 'yes_no'){
          AS WaitTime_Results, COUNT(result) AS Totals 
          FROM composite WHERE surveyitem = 'Referral' 
          AND my_date=now()::Date GROUP BY WaitTime_Results");
-      
       print json_encode(array_values(pg_fetch_all($result)));
       break;
 
+      case "todayquestions":
+      $result = pg_query($dbconn, "SELECT result 
+         AS Question_Results, COUNT(result) AS Totals 
+         FROM composite WHERE surveyitem = 'Questions Answered' 
+         AND my_date=now()::Date GROUP BY Question_Results");
+      print json_encode(array_values(pg_fetch_all($result)));
+      break;
+
+      case "todayprofessionalism":
+      $result = pg_query($dbconn, "SELECT result 
+         AS Professionalism_Results, COUNT(result) AS Totals 
+         FROM composite WHERE surveyitem = 'Professionalism' 
+         AND my_date=now()::Date GROUP BY Professionalism_Results");
+      print json_encode(array_values(pg_fetch_all($result)));
+      break;
+
+      case "todayoverall":
+      $result = pg_query($dbconn, "SELECT result 
+         AS Overall_Results, COUNT(result) AS Totals 
+         FROM composite WHERE surveyitem = 'Overall Satisfaction' 
+         AND my_date=now()::Date GROUP BY Overall_Results");
+      print json_encode(array_values(pg_fetch_all($result)));
+      break;
+
+      case "todaywaittime":
+      $result = pg_query($dbconn, "SELECT result 
+         AS WaitTime_Results, COUNT(result) AS Totals 
+         FROM composite WHERE surveyitem = 'Wait Time' 
+         AND my_date=now()::Date GROUP BY WaitTime_Results");
+      print json_encode(array_values(pg_fetch_all($result)));
+      break;
    }
 }    
    
