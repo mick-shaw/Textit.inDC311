@@ -34,6 +34,16 @@ if ($survey == 'yes_no'){
       $result = pg_query($dbconn, "SELECT COUNT(*) FROM HBX WHERE my_date = now()::DATE");
       print json_encode(array_values(pg_fetch_all($result)));
       break;
+
+      case "todayreferral":
+      $result = pg_query($dbconn, "SELECT result AS WaitTime_Results, COUNT(result) AS Totals
+      FROM composite
+      WHERE surveyitem = 'Referral' AND my_date=now()::Date
+      GROUP BY WaitTime_Results");
+      
+      print json_encode(array_values(pg_fetch_all($result)));
+      break;
+
    }
 }    
    
