@@ -23,7 +23,7 @@ $refer = $_REQUEST['refer'];
 
 // Connect to my awesome Sample PostGres Database
 
-$dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sck3t55ue user=yysuxoqqtdzohb password=D27ay0-A7oQKsvsGmAfrCBnmT9")
+$dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sck3t55ue user=xvvxssmzzaoaks password=Llcymti7JpH2tIA59lyKdPhqlM")
          or die('Could not connect: ' . pg_last_error());
 
 
@@ -36,7 +36,8 @@ if ($qstn == '1'){
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
                            VALUES('Questions Answered','Y');");
-}elseif ($qstn == '2'){
+}
+if ($qstn == '2'){
 	$result = pg_query($dbconn, "INSERT INTO questions(_no) 
                            VALUES('1');");
 
@@ -49,7 +50,8 @@ if ($sat == '1'){
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
                            VALUES('Overall Satisfaction','Y');");
-}elseif ($sat == '2'){
+}
+if ($sat == '2'){
 	$result = pg_query($dbconn, "INSERT INTO customerSat(_no) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
@@ -62,7 +64,8 @@ if ($wait == '1'){
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
                            VALUES('Wait Time','Y');");
 
-}elseif ($wait == '2'){
+}
+if ($wait == '2'){
 	$result = pg_query($dbconn, "INSERT INTO wait(_no) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
@@ -73,7 +76,8 @@ if ($prof == '1'){
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
                            VALUES('Professionalism','Y');");
-}elseif ($prof == '2'){
+}
+if ($prof == '2'){
 	$result = pg_query($dbconn, "INSERT INTO professionalism(_no) 
                            VALUES('1');");
 	$result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
@@ -84,7 +88,8 @@ if ($refer == '1'){
                            VALUES('1');");
    $result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 
                            VALUES('Referral','Y');");
-}elseif ($prof == '2'){
+}
+if ($prof == '2'){
    $result = pg_query($dbconn, "INSERT INTO referral(_no) 
                            VALUES('1');");
    $result = pg_query($dbconn, "INSERT INTO COMPOSITE(SurveyItem, Result) 

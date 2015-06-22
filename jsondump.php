@@ -12,7 +12,7 @@
 $survey = $_REQUEST['survey'];
 $query  = $_REQUEST['query'];
 
-$dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sck3t55ue user=yysuxoqqtdzohb password=D27ay0-A7oQKsvsGmAfrCBnmT9")
+$dbconn = pg_connect("host=ec2-54-83-17-8.compute-1.amazonaws.com dbname=d4053sck3t55ue user=xvvxssmzzaoaks password=Llcymti7JpH2tIA59lyKdPhqlM")
          or die('Could not connect: ' . pg_last_error());
 
 
